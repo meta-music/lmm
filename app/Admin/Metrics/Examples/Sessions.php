@@ -22,7 +22,7 @@ class Sessions extends Bar
         // 卡片内容宽度
         $this->contentWidth(5, 7);
         // 标题
-        $this->title('Avg Sessions');
+        $this->title('Avg Music mins');
         // 设置下拉选项
         $this->dropdown([
             '7' => 'Last 7 Days',

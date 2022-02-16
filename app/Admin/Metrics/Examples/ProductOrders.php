@@ -14,8 +14,8 @@ class ProductOrders extends Round
     {
         parent::init();
 
-        $this->title('Product Orders');
-        $this->chartLabels(['Finished', 'Pending', 'Rejected']);
+        $this->title('Cognitive Behavioral');
+        $this->chartLabels(['Feelings', 'Challenges', 'Changes']);
         $this->dropdown([
             '7' => 'Last 7 Days',
             '28' => 'Last 28 Days',
@@ -81,7 +81,7 @@ class ProductOrders extends Round
     <div class="chart-info d-flex justify-content-between mb-1 mt-2" >
           <div class="series-info d-flex align-items-center">
               <i class="fa fa-circle-o text-bold-700 text-primary"></i>
-              <span class="text-bold-600 ml-50">Finished</span>
+              <span class="text-bold-600 ml-50">Feelings</span>
           </div>
           <div class="product-result">
               <span>{$finished}</span>
@@ -91,7 +91,7 @@ class ProductOrders extends Round
     <div class="chart-info d-flex justify-content-between mb-1">
           <div class="series-info d-flex align-items-center">
               <i class="fa fa-circle-o text-bold-700 text-warning"></i>
-              <span class="text-bold-600 ml-50">Pending</span>
+              <span class="text-bold-600 ml-50">Challenges</span>
           </div>
           <div class="product-result">
               <span>{$pending}</span>
@@ -101,7 +101,7 @@ class ProductOrders extends Round
      <div class="chart-info d-flex justify-content-between mb-1">
           <div class="series-info d-flex align-items-center">
               <i class="fa fa-circle-o text-bold-700 text-danger"></i>
-              <span class="text-bold-600 ml-50">Rejected</span>
+              <span class="text-bold-600 ml-50">Changes</span>
           </div>
           <div class="product-result">
               <span>{$rejected}</span>

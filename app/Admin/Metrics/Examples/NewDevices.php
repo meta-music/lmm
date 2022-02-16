@@ -7,7 +7,7 @@ use Dcat\Admin\Widgets\Metrics\Donut;
 
 class NewDevices extends Donut
 {
-    protected $labels = ['Desktop', 'Mobile'];
+    protected $labels = ['Happiness', 'Sadness'];
 
     /**
      * 初始化卡片内容
@@ -19,7 +19,7 @@ class NewDevices extends Donut
         $color = Admin::color();
         $colors = [$color->primary(), $color->alpha('blue2', 0.5)];
 
-        $this->title('New Devices');
+        $this->title('New Emotions');
         $this->subTitle('Last 30 days');
         $this->chartLabels($this->labels);
         // 设置图表颜色
@@ -82,6 +82,7 @@ class NewDevices extends Donut
 
         return $this->content(
             <<<HTML
+           项目讨论: <a href="https://www.verywellmind.com/an-overview-of-the-types-of-emotions-4163976" >types of emotions</a>
 <div class="d-flex pl-1 pr-1 pt-1" style="{$style}">
     <div style="width: {$labelWidth}px">
         <i class="fa fa-circle text-primary"></i> {$this->labels[0]}

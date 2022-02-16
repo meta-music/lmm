@@ -16,7 +16,7 @@ class NewUsers extends Line
     {
         parent::init();
 
-        $this->title('New Users');
+        $this->title('New Likes');
         $this->dropdown([
             '7' => 'Last 7 Days',
             '28' => 'Last 28 Days',
