@@ -31,7 +31,7 @@ class PostController extends AdminController
     }
     /**
      * Make a grid builder.
-     *
+     * helpers/scaffold
      * @return Grid
      */
     protected function grid()
@@ -45,7 +45,9 @@ class PostController extends AdminController
             // $grid->column('mood');
             // $grid->column('music');
             // $grid->column('log');
-            $grid->column('thought');
+            $grid->column('thought')->display(function($val){
+                return '<a href="'.admin_url('posts/'.$this->id.'/edit').'" >'.$val.'</a>';
+            });
             // $grid->column('challenge');
             // $grid->column('behavior');
             // $grid->column('change');
@@ -55,7 +57,7 @@ class PostController extends AdminController
             // $grid->column('user_id');
             // $grid->column('created_at');
             $grid->column('updated_at')->sortable();
-            // $grid->disableActions();
+            $grid->disableActions();
             $grid->disableBatchActions();
             $grid->disableFilterButton();
             $grid->disableColumnSelector();
@@ -105,15 +107,24 @@ class PostController extends AdminController
     {
         return Form::make(new Post(), function (Form $form) {
             // $form->display('id');
+            $form->action('step');
 
-            $form->select('feeling')->options($this->feeling)->required()->help('表单不代表实际用户场景的交互逻辑, 仅用于demo和测试/讨论, 讨论: 情绪对应的音乐属性待确定, 例如音长/音高/评率等, 对应ABC模型');
-            $form->textarea('mood')->help('首先, 我感觉（插入特定的情感）对应 C 长按情绪 普拉切克的情绪轮盘. 用于情绪的具体/比喻描述?可以考虑自动生成指导建议选项');
-            $form->textarea('log')->help('其次，描述触发事件 - A 避免判断和意见，采用细节.');
-            $form->textarea('thought')->help('再次，找到信念 - B 我认为（插入信念）<br>1. 这个时间此刻对我来说意味着什么<br>2. 我为什么会有这样的情绪或者那样的行为？<br>3. 在事件发生后，是什么导致了我出现这样的情绪或行为？<br>4. 我当时是怎么想的？<br>5. 反向检验：有了我所发现的信念，我还会期望感受到那种特定的结果吗？')->required();
-            $form->textarea('challenge')->help('再次，挑战各种信念 - 你通过评估一个信念的有效性、质疑它，并找到一个更好的选择来挑战它。<br>1. 这种信念是否足够灵活以适应所有事件？<br>2. 这种信念是合乎逻辑的，还是基于错误逻辑的？<br>3. 这种信念是与事实和经验一致的，还是不一致的？<br>4. 这种信念对我追求目标有用吗？它能让我对自己和自己的生活感觉良好吗？');
-            $form->textarea('behavior')->help('最后，写下好的替代信念, 我能想到哪种替代想法？哪一种思维方式是合乎逻辑的，基于现实的，灵活的，对我追求目标是有用的？');
-            $form->select('change')->options($this->feeling)->help('最后之后, 当信仰的改变发生, 他会让你的情绪从原本的XXX变成什么?');
-            $form->text('image')->help('用户可以选择上传一张图片');
+            $form->multipleSteps()
+                ->remember()
+                ->width('350px')
+                ->add('Feeling', function ($form) {
+                    $form->select('feeling')->options($this->feeling)->required()->help('表单不代表实际用户场景的交互逻辑, 仅用于demo和测试/讨论, 讨论: 情绪对应的音乐属性待确定, 例如音长/音高/评率等, 对应ABC模型');
+                    // $form->textarea('mood')->help('首先, 我感觉（插入特定的情感）对应 C 长按情绪 普拉切克的情绪轮盘. 用于情绪的具体/比喻描述?可以考虑自动生成指导建议选项');
+                    // $form->textarea('log')->help('其次，描述触发事件 - A 避免判断和意见，采用细节.');
+                // })->add('Thought', function ($form) {
+                //     $form->textarea('thought')->help('再次，找到信念 - B 我认为（插入信念）<br>1. 这个时间此刻对我来说意味着什么<br>2. 我为什么会有这样的情绪或者那样的行为？<br>3. 在事件发生后，是什么导致了我出现这样的情绪或行为？<br>4. 我当时是怎么想的？<br>5. 反向检验：有了我所发现的信念，我还会期望感受到那种特定的结果吗？')->required();
+                // })->add('Challenge', function ($form) {
+                //     $form->textarea('challenge')->help('再次，挑战各种信念 - 你通过评估一个信念的有效性、质疑它，并找到一个更好的选择来挑战它。<br>1. 这种信念是否足够灵活以适应所有事件？<br>2. 这种信念是合乎逻辑的，还是基于错误逻辑的？<br>3. 这种信念是与事实和经验一致的，还是不一致的？<br>4. 这种信念对我追求目标有用吗？它能让我对自己和自己的生活感觉良好吗？');
+                })->done(function ($form) {
+                    $form->textarea('behavior')->help('最后，写下好的替代信念, 我能想到哪种替代想法？哪一种思维方式是合乎逻辑的，基于现实的，灵活的，对我追求目标是有用的？');
+                    // $form->select('change')->options($this->feeling)->help('最后之后, 当信仰的改变发生, 他会让你的情绪从原本的XXX变成什么?');
+                    // $form->text('image')->help('用户可以选择上传一张图片');
+                });
 
             $form->text('music')->help('预留字段, 无需用户填写, 用于存储SongMaker的旋律和音乐配置,可json或chat格式');
             $form->text('ai_music')->help('预留字段, 无需用户填写, 用于存储AI生成的音乐文件路径, VIP(也许可以作为付费用户的卖点?)');
