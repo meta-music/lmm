@@ -120,19 +120,18 @@ class PostController extends AdminController
                     $form->textarea('mood')->help('首先, 我感觉（插入特定的情感）对应 C 长按情绪 普拉切克的情绪轮盘. 用于情绪的具体/比喻描述?可以考虑自动生成指导建议选项');
                     $form->textarea('log')->help('其次，描述触发事件 - A 避免判断和意见，采用细节.');
                     $form->textarea('thought')->help('再次，找到信念 - B 我认为（插入信念）<br>1. 这个时间此刻对我来说意味着什么<br>2. 我为什么会有这样的情绪或者那样的行为？<br>3. 在事件发生后，是什么导致了我出现这样的情绪或行为？<br>4. 我当时是怎么想的？<br>5. 反向检验：有了我所发现的信念，我还会期望感受到那种特定的结果吗？')->required();
-                    $form->html('<button class="btn btn-success btn-lg" style="justify-content: space-between!important;"> 来SongMaker弹出你的情绪吧! </button>');
+                    $form->html('<a href="https://meta-music.github.io/songmaker/" class="btn btn-success btn-lg" style="justify-content: space-between!important;">来SongMaker弹出你的情绪!</a>');
                 })->add('Change', function ($form) {
                     $form->textarea('challenge')->help('再次，挑战各种信念 - 你通过评估一个信念的有效性、质疑它，并找到一个更好的选择来挑战它。<br>1. 这种信念是否足够灵活以适应所有事件？<br>2. 这种信念是合乎逻辑的，还是基于错误逻辑的？<br>3. 这种信念是与事实和经验一致的，还是不一致的？<br>4. 这种信念对我追求目标有用吗？它能让我对自己和自己的生活感觉良好吗？');
                     $form->textarea('behavior')->help('最后，写下好的替代信念, 我能想到哪种替代想法？哪一种思维方式是合乎逻辑的，基于现实的，灵活的，对我追求目标是有用的？');
                     $form->select('change')->options($this->feeling)->help('完成了音乐制作后, 当信仰的改变发生, 他会让你的情绪从原本的XXX变成什么?');
                     $form->text('image')->help('用户可以选择上传一张图片');
                 })->done(function () use ($form) {
-                    $resource = $form->getResource(0);
                     $data = [
                         'title'       => '完成制作',
                         'description' => '恭喜您创建了新的作品!',
-                        'createUrl'   => $resource,
-                        'backUrl'     => $resource,
+                        'createUrl'   => admin_url('posts/create'),
+                        'backUrl'     => admin_url('posts'),
                     ];
                     return view('dcat-admin.form-step::completion-page', $data);
                 });

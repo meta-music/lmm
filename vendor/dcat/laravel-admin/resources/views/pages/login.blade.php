@@ -106,7 +106,7 @@
                             @endif
                         </div>
                     </div>
-                    <a href="/register/create" class="btn btn-warning float-left login-btn">Register</a>
+                    <a href="/register/create" class="btn btn-success float-left login-btn">Register</a>
 
                     <button type="submit" class="btn btn-primary float-right login-btn">
 
