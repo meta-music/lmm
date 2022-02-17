@@ -6,6 +6,7 @@ use Dcat\Admin\Admin;
 
 Admin::routes();
 
+$router->resource('/register', config('admin.route.namespace').'\AuthController');
 Route::group([
     'prefix'     => config('admin.route.prefix'),
     'namespace'  => config('admin.route.namespace'),

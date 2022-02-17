@@ -41,12 +41,12 @@
                         <a href="#{{ $step->getElementId() }}" class="dcat-step-item-container">
                             <div class="dcat-step-line"></div>
                             <div class="dcat-step-icons">
-                                <span class="dcat-step-icon" data-index="{{ $step->index() }}">{{ $step->index() + 1 }}</span>
+                                <span class="dcat-step-icon" data-index="{{ $step->index() }}">{{ $step->index() + 1 }}. {{ $step->title() }}</span>
                             </div>
-                            <div class="dcat-step-content">
+                            <!-- <div class="dcat-step-content">
                                 <div class="dcat-step-title">{!! $step->title() !!}</div>
                                 <div class="dcat-step-desc"> {{ $step->description() }} </div>
-                            </div>
+                            </div> -->
                         </a>
                     </li>
                 @endforeach
@@ -55,12 +55,12 @@
                     <a href="#{{ $steps->done()->getElementId() }}" class="dcat-step-item-container">
                         <div class="dcat-step-line"></div>
                         <div class="dcat-step-icons">
-                            <span class="dcat-step-icon" data-index="{{ $steps->count() }}"> {{ $steps->count() + 1 }} </span>
+                            <span class="dcat-step-icon" data-index="{{ $steps->count() }}"> {{ $steps->done()->title() }}</span>
                         </div>
-                        <div class="dcat-step-content">
+                        <!-- <div class="dcat-step-content">
                             <div class="dcat-step-title">{{ $steps->done()->title() }}</div>
                             <div class="dcat-step-desc"></div>
-                        </div>
+                        </div> -->
                     </a>
                 </li>
             </ul>
@@ -114,7 +114,7 @@ Dcat.ready(function () {
             submit(function (state, data) {
                 $t.buttonLoading(false);
                 isSubmitting = 0;
-                
+
                 if (typeof data.status !== 'undefined' && ! data.status) {
                     return Dcat.handleJsonResponse(data)
                 }
