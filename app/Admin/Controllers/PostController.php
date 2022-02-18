@@ -28,7 +28,7 @@ class PostController extends AdminController
         return $content
             ->translation($this->translation())
             ->title($this->title())
-            ->description('该页面用于demo的音乐日记的增删改查, 交互和样式后续修改')//$this->description()['index'] ?? trans('admin.list')
+            ->description('该页面用于demo的音乐日记的增删改查, 交互和样式后续修改, ToDo: 权限/分享/SongMaker整合')//$this->description()['index'] ?? trans('admin.list')
             ->body($this->grid());
     }
     /**
@@ -38,6 +38,7 @@ class PostController extends AdminController
      */
     protected function grid()
     {
+        //
         return Grid::make(new Post(), function (Grid $grid) {
             // $grid->column('id')->sortable();
             $feeling = $this->feeling;
