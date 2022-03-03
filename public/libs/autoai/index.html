@@ -30,23 +30,27 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Input form -->
+      <h1>AI智能生成音乐Demo</h1>
+    <p style="width: 90%;">这里根据用户的输入（包括情绪，想法等），自动生成一段简单的音乐（大约包含2~5个音符），然后可以点击Generate，通过AI框架Magenta自动生成一段完整的音乐.</p>
+    <br><!-- Input form -->
+
+    <h3>通过Add按钮输入几个音符:</h3>
     <form id="input-form">
 
       <!-- Duration -->
       <label for="duration">Duration</label>
       <select id="duration" required>
         <option value="" selected disabled>...</option>
-        <option value="1">&#119133;</option>
-        <option value="2">&#119134;</option>
-        <option value="4">&#119135;</option>
-        <option value="8">&#119136;</option>
-        <option value="16">&#119137;</option>
-        <option value="r1">&#119099;</option>
-        <option value="r2">&#119100;</option>
-        <option value="r4">&#119101;</option>
-        <option value="r8">&#119102;</option>
-        <option value="r16">&#119103;</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="8">8</option>
+        <option value="16">16</option>
+        <option value="r1">r1</option>
+        <option value="r2">r2</option>
+        <option value="r4">r4</option>
+        <option value="r8">r8</option>
+        <option value="r16">r16</option>
       </select>
 
       <!-- Pith -->
@@ -109,8 +113,7 @@
     <input type="number" id="bpm" min="50" max="180" value="90">
     <br>
     <br>
-    <br>
-
+    <h3>生成后的音乐:</h3>
     <!-- Add midi player -->
     <midi-visualizer type="staff" id="myVisualizer"></midi-visualizer>
     <midi-player sound-font="https://storage.googleapis.com/magentadata/js/soundfonts/salamander" visualizer="#myVisualizer" id="midiPlayer"></midi-player>
