@@ -82,7 +82,7 @@ class NewDevices extends Donut
 
         return $this->content(
             <<<HTML
-           项目讨论: <a href="https://www.verywellmind.com/an-overview-of-the-types-of-emotions-4163976" >types of emotions</a>
+           项目讨论: 2003 年，Juslin 提出了音乐线索一致性模型(JUSLIN 音乐基本情绪量表), 音乐情绪的协同化理论(expectancy theory), CMA 二维情感环形模型量表, 日内瓦音乐情绪量表-9 (The Geneva Emotional Music Scales-9, GEMS-9), <a href="https://www.verywellmind.com/an-overview-of-the-types-of-emotions-4163976" >types of emotions</a>
 <div class="d-flex pl-1 pr-1 pt-1" style="{$style}">
     <div style="width: {$labelWidth}px">
         <i class="fa fa-circle text-primary"></i> {$this->labels[0]}
