@@ -8,14 +8,14 @@
     <title>My music web app</title>
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
-    
+    <link rel="stylesheet" href="style.css" />
+
     <!-- Add html-midi-player -->
     <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.21.0/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.1.1"></script>
-    
+
     <!-- Add Vexflow -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vexflow/3.0.9/vexflow-debug.js" integrity="sha512-lKd1a91LRkmZa8zZUEdjzgepWZpue8mVl5ikn1Itf1nQoNQsnzuEMbAQJz6C/dVYSw63GFYo+t0M+bCnLZf/Sg==" crossorigin="anonymous"></script>
-    
+
     <!-- Add Tone.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.13/Tone.js" integrity="sha512-SAB2YrHeaZfb6W1w+tAMm+IUICzUMyf7TJ8upY+NjLYl8jseufUW4yYzoSHfNL9N2rzDlw5PWJrf7rPIQ6VhNw==" crossorigin="anonymous"></script>
 
@@ -25,14 +25,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.21.0/es6/core.js"></script>
     <!--Model we want to use -->
     <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.21.0/es6/music_rnn.js"></script>
-    
+
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <!-- Input form -->
     <form id="input-form">
-      
+
       <!-- Duration -->
       <label for="duration">Duration</label>
       <select id="duration" required>
@@ -48,7 +48,7 @@
         <option value="r8">&#119102;</option>
         <option value="r16">&#119103;</option>
       </select>
-      
+
       <!-- Pith -->
       <label for="pitch">Pitch</label>
       <select id="pitch" required>
@@ -87,12 +87,12 @@
         Add
       </button>
     </form>
-    
+
     <!-- Staff -->
     <div id="staff">
-      
+
     </div>
-    
+
     <!-- Player controlers -->
     <button id="play">
       Play
@@ -103,7 +103,7 @@
     <button id="generate">
       Generate
     </button>
-    
+
     <!-- Add bpm -->
     <label for="bpm">bpm</label>
     <input type="number" id="bpm" min="50" max="180" value="90">
@@ -114,6 +114,6 @@
     <!-- Add midi player -->
     <midi-visualizer type="staff" id="myVisualizer"></midi-visualizer>
     <midi-player sound-font="https://storage.googleapis.com/magentadata/js/soundfonts/salamander" visualizer="#myVisualizer" id="midiPlayer"></midi-player>
-    
+
   </body>
 </html>
