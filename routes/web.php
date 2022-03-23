@@ -17,9 +17,15 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+// Route::get('/', function () {
+//     return view('index');
+// });
+
 Route::get('/', function () {
-    return view('index');
+    return view('moodd');
 });
+
+Route::get('/imgapi', [App\Http\Controllers\HomeController::class, 'pixabayImgApi'])->name('imgApi');
 
 // Auth::routes();
 
