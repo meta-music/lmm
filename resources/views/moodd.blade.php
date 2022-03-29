@@ -32,7 +32,7 @@
             width: 100%;
             min-height: 100px;
             padding: 10px 10px 20px 10px;
-            background-color: #f0f8ff4d;
+            background-color: #f0f8ffbd;
             border-radius: 5px;
         }
         .streamHolding {
@@ -402,8 +402,10 @@ var apiImages = [];
         }
 
         function setBgImage(img) {
-            $('body').css("background",'url("'+img+'")  no-repeat center 0px')
-            $('body').css("background-size",'cover');
+            if (img.length>0) {
+                $('body').css("background",'url("'+img+'")  no-repeat center 0px')
+                $('body').css("background-size",'cover');
+            }
         }
 
         function select_range(low, up, ratio) {

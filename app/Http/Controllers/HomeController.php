@@ -92,7 +92,7 @@ class HomeController extends Controller
             $result = json_decode($response->getBody()->getContents(), true);
             $imgs = Arr::pluck($result['hits'],'webformatURL');
             // dd($endpoint . "?" . $param,$result,cache($cacheKey));
-            cache([$cacheKey=>$imgs],36000000);
+            cache([$cacheKey=>$imgs],60);
             // dd($imgs);
             return $imgs;
         } catch (\Exception $e) {
