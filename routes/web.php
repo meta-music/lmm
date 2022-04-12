@@ -30,3 +30,5 @@ Route::get('/imgapi', [App\Http\Controllers\HomeController::class, 'pixabayImgAp
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/ttt', [App\Http\Controllers\Wechat\OfficialController::class,'ttt']);

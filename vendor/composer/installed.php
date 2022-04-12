@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '44ac00006297e3597df4233bf11b45825313b84a',
+        'reference' => 'c0c5611be961129afb2f09691382d6ee0963880e',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -128,15 +128,6 @@
             'install_path' => __DIR__ . '/../dragonmantank/cron-expression',
             'aliases' => array(),
             'reference' => 'be85b3f05b46c39bbc0d95f6c071ddff669510fa',
-            'dev_requirement' => false,
-        ),
-        'easywechat-composer/easywechat-composer' => array(
-            'pretty_version' => '1.4.1',
-            'version' => '1.4.1.0',
-            'type' => 'composer-plugin',
-            'install_path' => __DIR__ . '/../easywechat-composer/easywechat-composer',
-            'aliases' => array(),
-            'reference' => '3fc6a7ab6d3853c0f4e2922539b56cc37ef361cd',
             'dev_requirement' => false,
         ),
         'egulias/email-validator' => array(
@@ -454,7 +445,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '44ac00006297e3597df4233bf11b45825313b84a',
+            'reference' => 'c0c5611be961129afb2f09691382d6ee0963880e',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -592,6 +583,24 @@
             'reference' => '8b610eef8582ccdc05d8f2ab23305e2d37049461',
             'dev_requirement' => true,
         ),
+        'nyholm/psr7' => array(
+            'pretty_version' => '1.5.0',
+            'version' => '1.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nyholm/psr7',
+            'aliases' => array(),
+            'reference' => '1461e07a0f2a975a52082ca3b769ca912b816226',
+            'dev_requirement' => false,
+        ),
+        'nyholm/psr7-server' => array(
+            'pretty_version' => '1.0.2',
+            'version' => '1.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nyholm/psr7-server',
+            'aliases' => array(),
+            'reference' => 'b846a689844cef114e8079d8c80f0afd96745ae3',
+            'dev_requirement' => false,
+        ),
         'ocramius/package-versions' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -608,12 +617,12 @@
             'dev_requirement' => false,
         ),
         'overtrue/laravel-wechat' => array(
-            'pretty_version' => '6.0.1',
-            'version' => '6.0.1.0',
+            'pretty_version' => '7.0.3',
+            'version' => '7.0.3.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../overtrue/laravel-wechat',
             'aliases' => array(),
-            'reference' => 'bdfb4b0b264204e9625a04937c0f98b9ff7722b2',
+            'reference' => '213bc46ecb89fd1144ad40056634365d1123c6ea',
             'dev_requirement' => false,
         ),
         'overtrue/socialite' => array(
@@ -623,15 +632,6 @@
             'install_path' => __DIR__ . '/../overtrue/socialite',
             'aliases' => array(),
             'reference' => '1607bc8aa95235b1538b3dc4a36324ee2cdf0df5',
-            'dev_requirement' => false,
-        ),
-        'overtrue/wechat' => array(
-            'pretty_version' => '5.15.0',
-            'version' => '5.15.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../overtrue/wechat',
-            'aliases' => array(),
-            'reference' => 'b2bc13e0211988157edd6bd80d3a7d64ab823784',
             'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(
@@ -651,6 +651,27 @@
             'aliases' => array(),
             'reference' => 'bae7c545bef187884426f042434e561ab1ddb182',
             'dev_requirement' => true,
+        ),
+        'php-http/async-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '*',
+            ),
+        ),
+        'php-http/client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '*',
+            ),
+        ),
+        'php-http/message-factory' => array(
+            'pretty_version' => 'v1.0.2',
+            'version' => '1.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-http/message-factory',
+            'aliases' => array(),
+            'reference' => 'a478cb11f66a6ac48d8954216cfed9aa06a501a1',
+            'dev_requirement' => false,
         ),
         'phpdocumentor/reflection-common' => array(
             'pretty_version' => '2.2.0',
@@ -750,15 +771,6 @@
             'aliases' => array(),
             'reference' => '93d4bf4c37aec6384bb9e5d390d9049a463a7256',
             'dev_requirement' => true,
-        ),
-        'pimple/pimple' => array(
-            'pretty_version' => 'v3.5.0',
-            'version' => '3.5.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../pimple/pimple',
-            'aliases' => array(),
-            'reference' => 'a94b3a4db7fb774b3d78dad2315ddc07629e1bed',
-            'dev_requirement' => false,
         ),
         'psr/cache' => array(
             'pretty_version' => '1.0.1',
@@ -1179,6 +1191,30 @@
             'reference' => 'e77046c252be48c48a40816187ed527703c8f76c',
             'dev_requirement' => false,
         ),
+        'symfony/http-client' => array(
+            'pretty_version' => 'v6.0.5',
+            'version' => '6.0.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/http-client',
+            'aliases' => array(),
+            'reference' => 'a8f87328930932c455cffd048f965d1223d91915',
+            'dev_requirement' => false,
+        ),
+        'symfony/http-client-contracts' => array(
+            'pretty_version' => 'v3.0.1',
+            'version' => '3.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/http-client-contracts',
+            'aliases' => array(),
+            'reference' => 'f7525778c712be78ad5b6ca31f47fdcfd404c280',
+            'dev_requirement' => false,
+        ),
+        'symfony/http-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '3.0',
+            ),
+        ),
         'symfony/http-foundation' => array(
             'pretty_version' => 'v5.4.2',
             'version' => '5.4.2.0',
@@ -1417,6 +1453,15 @@
             'install_path' => __DIR__ . '/../voku/portable-ascii',
             'aliases' => array(),
             'reference' => '80953678b19901e5165c56752d087fc11526017c',
+            'dev_requirement' => false,
+        ),
+        'w7corp/easywechat' => array(
+            'pretty_version' => '6.0.0',
+            'version' => '6.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../w7corp/easywechat',
+            'aliases' => array(),
+            'reference' => '63f7551ae73b1515bf9587dd045370ec1c3e96cc',
             'dev_requirement' => false,
         ),
         'webmozart/assert' => array(
